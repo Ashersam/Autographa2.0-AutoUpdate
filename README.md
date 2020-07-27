@@ -1,2 +1,3 @@
-# Autographa2.0-AutoUpdate
-To test Agnew Autoupdate
+# autographa
+
+A Bible translation editor for everyone.
