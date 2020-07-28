@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"author": "Friends of Agape <mathew.joel@protonmail.com>",
 	"license": "MIT",
+	"repository": "git@github.com:Ashersam/Autographa2.0-AutoUpdate.git",
 	"main": "public/electron.js",
 	"homepage": ".",
 	"dependencies": {
@@ -17,6 +18,8 @@
 		"@testing-library/user-event": "^7.2.1",
 		"axios": "^0.19.2",
 		"diff-match-patch": "^1.0.5",
+		"electron-updater": "^4.0.6",
+		"electron-log": "^4.2.2",
 		"leveldown": "5.6.0",
 		"mobx": "5.15.4",
 		"mobx-react": "6.2.1",
@@ -59,8 +62,7 @@
 				"deb"
 			],
 			"icon": "resources/icon.png"
-		},
-		"publish": null
+		}
 	},
 	"keywords": [
 		"Desktop",
@@ -83,9 +85,9 @@
 		"lint:fix": "eslint ./src --fix",
 		"build:electron": "craco build --config craco.config.js main=build/electron.js",
 		"preelectron-pack": "npm run build",
-		"maxmemory-allocation": "NODE_OPTIONS=--max_old_space_size=4096",
 		"eslint:github-action": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore --max-warnings 0",
-		"electron-pack": "electron-builder -p never"
+		"electron-pack": "electron-builder -p never",
+		"gh-publish": "electron-builder --x64 --win -p always"
 	},
 	"jest": {
 		"moduleNameMapper": {
@@ -111,7 +113,7 @@
 		"check-prop-types": "^1.1.2",
 		"concurrently": "^5.1.0",
 		"cross-env": "^7.0.2",
-		"electron": "^8.2.3",
+		"electron": "^8.4.1",
 		"electron-builder": "^22.5.1",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.2",
