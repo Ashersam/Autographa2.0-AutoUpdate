@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Viewer from "@bit/unfoldingword.resources.viewer";
+// import Viewer from "@bit/unfoldingword.resources.viewer";
 import Constant from "../../core/constants";
 import { Offline, Online } from "react-detect-offline";
 import TranslateIcon from "@material-ui/icons/Translate";
@@ -8,26 +8,26 @@ import { IconButton, SwipeableDrawer } from "@material-ui/core";
 import { Observer } from "mobx-react";
 
 const TranslationHelp = (props) => {
-  let defaultContext = {
-    // username: 'STR',
-    // username: 'unfoldingword',
-    username: "Door43-Catalog",
-    languageId: "en", //AutographaStore.translationHelplanguageId,
-    resourceId: "ust", //AutographaStore.translationHelpresourceId,
-    reference: {
-      bookId: `${
-        props.book
-          ? Constant.bookCodeList[parseInt(props.book, 10) - 1].toLowerCase()
-          : "gen"
-      }`,
-      chapter: props.chapter ? props.chapter : "1",
-    },
-  };
-  const [context, setContext] = useState(defaultContext);
-  const [viewerComponent, setViewerComponent] = useState(<></>);
-  const [state, setState] = useState({
-    left: false,
-  });
+  // let defaultContext = {
+  //   // username: 'STR',
+  //   // username: 'unfoldingword',
+  //   username: "Door43-Catalog",
+  //   languageId: "en", //AutographaStore.translationHelplanguageId,
+  //   resourceId: "ust", //AutographaStore.translationHelpresourceId,
+  //   reference: {
+  //     bookId: `${
+  //       props.book
+  //         ? Constant.bookCodeList[parseInt(props.book, 10) - 1].toLowerCase()
+  //         : "gen"
+  //     }`,
+  //     chapter: props.chapter ? props.chapter : "1",
+  //   },
+  // };
+  // const [context, setContext] = useState(defaultContext);
+  // const [viewerComponent, setViewerComponent] = useState(<></>);
+  // const [state, setState] = useState({
+  //   left: false,
+  // });
 
   // useEffect(() => {
   //   let _bookID = Constant.bookCodeList.indexOf(
@@ -48,25 +48,25 @@ const TranslationHelp = (props) => {
   // useEffect(() => {
   // 	setContext(defaultContext)
   // }, [props.onResourceChange])
-  useEffect(() => {
-    const viewer = (
-      <Viewer
-        {...props}
-        context={context}
-        history={[]}
-        setContext={setContext}
-      />
-    );
-    setViewerComponent(viewer);
-  }, [context, props]);
+  // useEffect(() => {
+  //   const viewer = (
+  //     <Viewer
+  //       {...props}
+  //       context={context}
+  //       history={[]}
+  //       setContext={setContext}
+  //     />
+  //   );
+  //   setViewerComponent(viewer);
+  // }, [props]);
 
-  const toggleDrawer = (anchor, open) => (event) => {
-    setState({ ...state, [anchor]: open });
-  };
+  // const toggleDrawer = (anchor, open) => (event) => {
+  //   setState({ ...state, [anchor]: open });
+  // };
 
   return (
     <div>
-      <Observer>
+      {/* <Observer>
         {() => (
           <React.Fragment key={"left"}>
             <IconButton
@@ -92,7 +92,7 @@ const TranslationHelp = (props) => {
             </SwipeableDrawer>
           </React.Fragment>
         )}
-      </Observer>
+      </Observer> */}
     </div>
   );
 };

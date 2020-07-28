@@ -3,7 +3,6 @@
 	"version": "0.1.0",
 	"author": "Friends of Agape <mathew.joel@protonmail.com>",
 	"license": "MIT",
-	"repository": "git@github.com:Ashersam/Autographa2.0-AutoUpdate.git",
 	"main": "public/electron.js",
 	"homepage": ".",
 	"dependencies": {
@@ -62,7 +61,15 @@
 				"deb"
 			],
 			"icon": "resources/icon.png"
+		},
+		"publish": {
+			"provider": "github",
+			"token": "fb5362997a35d364a1d94246a3e29870baea130f"
 		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Ashersam/Autographa2.0-AutoUpdate.git"
 	},
 	"keywords": [
 		"Desktop",
@@ -86,26 +93,15 @@
 		"build:electron": "craco build --config craco.config.js main=build/electron.js",
 		"preelectron-pack": "npm run build",
 		"eslint:github-action": "node ./node_modules/eslint/bin/eslint . --ignore-path .gitignore --max-warnings 0",
-		"electron-pack": "electron-builder -p never",
-		"gh-publish": "electron-builder --x64 --win -p always"
+		"electron-pack": "electron-builder --x64 -p never",
+		"gh-publish": "electron-builder --x64 -p always"
 	},
-	"jest": {
-		"moduleNameMapper": {
-			"electron": "<rootDir>/__mocks__/electron.js"
-		}
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
 	"devDependencies": {
 		"@rescripts/cli": "0.0.10",
 		"@rescripts/rescript-env": "0.0.12",
@@ -113,8 +109,8 @@
 		"check-prop-types": "^1.1.2",
 		"concurrently": "^5.1.0",
 		"cross-env": "^7.0.2",
-		"electron": "^8.4.1",
-		"electron-builder": "^22.5.1",
+		"electron": "^6.0.9",
+		"electron-builder": "^21.2.0",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.2",
 		"eslint-config-prettier": "^6.11.0",
