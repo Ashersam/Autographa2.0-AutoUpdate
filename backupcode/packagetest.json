@@ -1,0 +1,42 @@
+{
+	"name": "autographa-auto-update",
+	"version": "3.0.5",
+	"description": "Test the auto update functionality",
+	"main": "main.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Ashersam/Autographa2.0-AutoUpdate.git"
+	},
+	"build": {
+		"win": {
+			"target": "nsis",
+			"publish": ["github"]
+		},
+		"nsis": {
+			"allowToChangeInstallationDirectory": true,
+			"oneClick": false
+		},
+		"publish": [
+			{
+				"provider": "github",
+				"owner": "Ashersam",
+				"repo": "Autographa2.0-AutoUpdate"
+			}
+		]
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron .",
+		"build": "electron-builder build --mac --win --publish never",
+		"deploy": "electron-builder build --win --publish always"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"electron": "^9.4.0",
+		"electron-builder": "^22.11.7"
+	},
+	"dependencies": {
+		"electron-updater": "^4.3.9"
+	}
+}
